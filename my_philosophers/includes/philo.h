@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: szaoual <szaoual@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/15 09:42:53 by szaoual           #+#    #+#             */
-/*   Updated: 2025/05/15 09:53:48 by szaoual          ###   ########.fr       */
+/*   Created: 2025/05/15 09:43:24 by szaoual           #+#    #+#             */
+/*   Updated: 2025/05/26 01:31:33 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#ifndef PHILO_H
+#define PHILO_H
+#include <stdio.h>
 #include <stdlib.h>
-
-int main()
-{
-    printf("Hello, World!\n");
-    return (0);
-}
+#include <pthread.h>
+#include <unistd.h>
+int     is_valid_input(int ac, char **av);
+#endif
