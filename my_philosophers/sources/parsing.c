@@ -56,8 +56,8 @@ int     is_valid_input(int ac, char **av)
             printf("invalid input: only digits as arguments.\n");
             return(0);
         }
-        nb = atoi(av[i]);
-        if(i == 1 && (nb <= 0 || nb > 250))
+        nb = integer_atoi(av[i]);
+        if(i == 1 && (nb <= 0 || nb > 200))
         {
             printf("invalid input: TOO MUCH PHILOS.\n");
             return(0);
