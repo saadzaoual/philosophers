@@ -1,4 +1,4 @@
-NAME = philosophers
+NAME = philo
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -pthread
 SRCS = sources/philosophers.c sources/parsing.c

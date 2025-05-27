@@ -62,6 +62,11 @@ int     is_valid_input(int ac, char **av)
             printf("invalid input: TOO MUCH PHILOS.\n");
             return(0);
         }
+        if(i == 2 && nb <= 0)
+        {
+            printf("the time_to_die must be over 0");
+            i++;
+        }
         if (i != 1 && nb == -1)
         {
             printf("invalid input: not a valid unsigned integer between 0 and 2147483647.\n");
