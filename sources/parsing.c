@@ -52,16 +52,10 @@ int     is_valid_input(int ac, char **av)
     while(i < ac)
     {
         if(!only_digits(av[i]))
-        {
-            printf("invalid input: only digits as arguments.\n");
-            return(0);
-        }
+        return (msg(STR_INPUT_DIGIT, av[i], 0));
         nb = integer_atoi(av[i]);
         if(i == 1 && (nb <= 0 || nb > 200))
-        {
-            printf("invalid input: TOO MUCH PHILOS.\n");
-            return(0);
-        }
+        return (msg(STR_INPUT_POFLOW, STR_MAX_PHILOS, 0));
         if(i == 2 && nb <= 0)
         {
             printf("the time_to_die must be over 0");
