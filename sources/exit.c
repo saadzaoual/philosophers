@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 17:27:50 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/07/08 12:28:08 by mcombeau         ###   ########.fr       */
+/*   Updated: 2025/05/28 09:06:55 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 /* free_table:
 *	Frees all of the memory allocated by the program.

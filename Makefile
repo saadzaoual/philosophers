@@ -1,7 +1,14 @@
 NAME = philo
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -pthread
-SRCS = sources/philosophers.c sources/parsing.c sources/error.c sources/initialazation.c
+SRCS	=	sources/main.c \
+			sources/parsing.c \
+			sources/grim_reaper.c \
+			sources/time.c \
+			sources/philosopher.c \
+			sources/init.c \
+			sources/output.c \
+			sources/exit.c
 OBJS = $(SRCS:.c=.o)
 
 all: $(NAME)

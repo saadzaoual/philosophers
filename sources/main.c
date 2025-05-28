@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:46:06 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/09/10 16:13:10 by mcombeau         ###   ########.fr       */
+/*   Updated: 2025/05/28 09:06:28 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 /* start_simulation:
 *	Launches the simulation by creating a grim reaper thread as well as

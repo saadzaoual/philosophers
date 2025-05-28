@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   grim_reaper.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:00:18 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/09/10 15:05:19 by mcombeau         ###   ########.fr       */
+/*   Updated: 2025/05/28 09:06:58 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 /* set_sim_stop_flag:
 *	Sets the simulation stop flag to true or false. Only the grim

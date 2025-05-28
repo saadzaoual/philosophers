@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 14:07:22 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/07/08 13:30:09 by mcombeau         ###   ########.fr       */
+/*   Updated: 2025/05/28 09:07:14 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 /* get_time_in_ms:
 *	Gets the current time in miliseconds since the Epoch (1970-01-01 00:00:00).

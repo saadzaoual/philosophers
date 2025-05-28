@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   philosopher.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:12:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/08/10 00:17:37 by mcombeau         ###   ########.fr       */
+/*   Updated: 2025/05/28 09:07:11 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 /* eat_sleep_routine:
 *	When a philosopher is ready to eat, he will wait for his fork mutexes to

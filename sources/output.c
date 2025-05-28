@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   output.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 13:20:23 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/07/17 10:40:16 by mcombeau         ###   ########.fr       */
+/*   Updated: 2025/05/28 09:07:04 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "../includes/philo.h"
 
 /* print_status_debug:
 *	Prints the philosopher's status in an easier to read,
