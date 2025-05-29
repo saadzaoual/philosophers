@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mcombeau <mcombeau@student.42.fr>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:46:01 by mcombeau          #+#    #+#             */
-/*   Updated: 2022/08/06 15:21:48 by mcombeau         ###   ########.fr       */
+/*   Updated: 2025/05/28 14:34:01 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 *                                     Macros                                  *
 ******************************************************************************/
 
-# define MAX_PHILOS	250
-# define STR_MAX_PHILOS "250"
+# define MAX_PHILOS	200
+# define STR_MAX_PHILOS "200"
 
 # ifndef DEBUG_FORMATTING
 #  define DEBUG_FORMATTING 0
