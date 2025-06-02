@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -pthread
 SRCS	=	sources/main.c \
 			sources/parsing.c \
-			sources/grim_reaper.c \
+			sources/sleepolice.c \
 			sources/time.c \
 			sources/philosopher.c \
 			sources/init.c \

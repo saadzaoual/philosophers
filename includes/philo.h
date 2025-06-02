@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaoual <szaoual@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:46:01 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/05/28 14:34:01 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/02 14:53:14 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 # define PHILO_H
 
 # include <pthread.h>
-# include <limits.h>
 # include <unistd.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/time.h>
-# include <stdbool.h>
 
 /******************************************************************************
 *                                     Macros                                  *
@@ -27,7 +25,7 @@
 
 # define MAX_PHILOS	200
 # define STR_MAX_PHILOS "200"
-
+# define INT_MAX 2147483647
 # ifndef DEBUG_FORMATTING
 #  define DEBUG_FORMATTING 0
 # endif
@@ -60,12 +58,12 @@ typedef struct s_table
 {
 	time_t			start_time;
 	unsigned int	nb_philos;
-	pthread_t		grim_reaper;
+	pthread_t		sleepolice;
 	time_t			time_to_die;
 	time_t			time_to_eat;
 	time_t			time_to_sleep;
 	int				must_eat_count;
-	bool			sim_stop;
+	int			sim_stop;
 	pthread_mutex_t	sim_stop_lock;
 	pthread_mutex_t	write_lock;
 	pthread_mutex_t	*fork_locks;
@@ -98,8 +96,8 @@ typedef enum e_status
 ******************************************************************************/
 
 //	parsing.c
-bool			is_valid_input(int ac, char **av);
-int				integer_atoi(char *str);
+int			is_valid_input(int ac, char **av);
+int				my_atoi(char *str);
 
 //	init.c
 t_table			*init_table(int ac, char **av, int i);
@@ -113,14 +111,14 @@ void			philo_sleep(t_table *table, time_t sleep_time);
 void			sim_start_delay(time_t start_time);
 
 //	output.c
-void			write_status(t_philo *philo, bool reaper, t_status status);
+void			write_status(t_philo *philo, int police, t_status status);
 void			write_outcome(t_table *table);
 void			*error_null(char *str, char *details, t_table *table);
 int				msg(char *str, char *detail, int exit_no);
 
-//	grim_reaper.c
-void			*grim_reaper(void *data);
-bool			has_simulation_stopped(t_table *table);
+//	sleepolice.c
+void			*sleepolice(void *data);
+int			has_simulation_stopped(t_table *table);
 
 //	exit.c
 int				error_failure(char *str, char *details, t_table *table);
