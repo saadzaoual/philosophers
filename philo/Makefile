@@ -1,8 +1,10 @@
 NAME = philo
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -pthread
+CFLAGS = -Wall -Wextra -Werror
 SRCS	=	src/philo.c\
-			src/parsing.c
+			src/parsing.c\
+			src/init.c\
+			src/time.c
 
 OBJS = $(SRCS:.c=.o)
 

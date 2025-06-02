@@ -19,6 +19,7 @@
 #include <pthread.h>
 #include <unistd.h>
 # include <sys/time.h>
+#include <stdlib.h>
 /******************************************************************************
 *                                   Macros                                    *
 ******************************************************************************/
@@ -39,6 +40,7 @@ typedef struct s_table
 	time_t			time_to_eat;
 	time_t			time_to_sleep;
     int             must_eat_count;
+    int 			sim_stop;
     int             simulation_stop;
     pthread_mutex_t	sim_stop_lock;
 	pthread_mutex_t	write_lock;
@@ -62,4 +64,9 @@ typedef struct s_philo
 ******************************************************************************/
 // parsing.c
 int     is_valid_input(int ac, char **av);
+int	my_atoi(char *str);
+//init.c
+t_table *init_table(int ac, char **av, int i);
+//time.c
+time_t get_time_in_ms(void);
 #endif

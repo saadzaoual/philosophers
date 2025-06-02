@@ -23,7 +23,7 @@ void	*free_table(t_table *table)
 	if (table->philos != NULL)
 	{
 		i = 0;
-		while (i < table->nb_philos)
+		while (i < table->nb_of_philos)
 		{
 			if (table->philos[i] != NULL)
 				free(table->philos[i]);
@@ -40,7 +40,7 @@ static pthread_mutex_t *init_forks(t_table *table)
 	pthread_mutex_t *forks;
 	unsigned int i;
 
-	forks = malloc(sizeof(pthread_mutex_t) * table->nb_philos);
+	forks = malloc(sizeof(pthread_mutex_t) * table->nb_of_philos);
 	if (!forks)
 	{
 		free_table(table);
@@ -49,7 +49,7 @@ static pthread_mutex_t *init_forks(t_table *table)
 	}
 
 	i = 0;
-	while (i < table->nb_philos)
+	while (i < table->nb_of_philos)
 	{
 		if (pthread_mutex_init(&forks[i], NULL) != 0)
 		{
@@ -67,12 +67,12 @@ static pthread_mutex_t *init_forks(t_table *table)
 
 static void	assign_forks(t_philo *philo)
 {
-	philo->fork[0] = philo->id;
-	philo->fork[1] = (philo->id + 1) % philo->table->nb_philos;
+	philo->forks[0] = philo->id;
+	philo->forks[1] = (philo->id + 1) % philo->table->nb_of_philos;
 	if (philo->id % 2)
 	{
-		philo->fork[0] = (philo->id + 1) % philo->table->nb_philos;
-		philo->fork[1] = philo->id;
+		philo->forks[0] = (philo->id + 1) % philo->table->nb_of_philos;
+		philo->forks[1] = philo->id;
 	}
 }
 
@@ -108,7 +108,7 @@ static t_philo  **init_philos(t_table *table)
         return 0;
     }
     i = 0;
-    while(i < nb_of_philos)
+    while(i < table->nb_of_philos)
     {
         philos[i] = malloc(sizeof(t_philo) * 1);
 		if (!philos[i])
@@ -125,7 +125,7 @@ static t_philo  **init_philos(t_table *table)
         }
         philos[i]->table = table;
 		philos[i]->id = i;
-		philos[i]->times_ate = 0;
+		philos[i]->time_ate = 0;
 		assign_forks(philos[i]);
 		i++;
     }
@@ -135,14 +135,14 @@ t_table *init_table(int ac, char **av, int i)
 {
     t_table *table;
 
-    table = malloc(sizeof((t_table) * 1));
+    table = malloc(sizeof(t_table) * 1);
     if(!table)
     {
         free_table(table);
         printf("Error: cant load the table!\n");
         return 0;
     }
-    table->nb_philos = my_atoi(av[i++]);
+    table->nb_of_philos = my_atoi(av[i++]);
 	table->time_to_die = my_atoi(av[i++]);
 	table->time_to_eat = my_atoi(av[i++]);
 	table->time_to_sleep = my_atoi(av[i++]);
