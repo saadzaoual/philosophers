@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sleepolice.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: szaoual <szaoual@student.1337.ma>          +#+  +:+       +#+        */
+/*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:00:18 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/06/04 11:10:05 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/04 11:58:36 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	*sleepolice(void *data)
 	{
 		if (end_condition_reached(table) == 1)
 			return (NULL);
-		usleep(100);
+		usleep(1000);
 	}
 	return (NULL);
 }
