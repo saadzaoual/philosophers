@@ -6,7 +6,7 @@
 /*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:12:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/06/04 12:09:10 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/04 13:23:29 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ void	*philosopher(void *data)
 		philo_sleep(philo->table, 1);
 	while (has_simulation_stopped(philo->table) == 0)
 	{
+		if(philo->table->must_eat_count != -1 && philo->table->must_eat_count  <= (int)philo->times_ate)
+			break;
 		eat_sleep_routine(philo);
 		write_status(philo, 0, THINKING);
 		if(philo->table->nb_philos % 2)
