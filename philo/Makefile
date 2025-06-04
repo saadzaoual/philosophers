@@ -1,6 +1,6 @@
 NAME = philo
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -pthread
+CFLAGS = -Wall -Wextra -Werror
 SRCS	=	sources/main.c \
 			sources/parsing.c \
 			sources/sleepolice.c \

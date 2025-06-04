@@ -6,7 +6,7 @@
 /*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 11:35:04 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/06/02 14:54:03 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/04 15:36:58 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,7 @@ static t_philo	**init_philosophers(t_table *table)
 		philos[i]->table = table;
 		philos[i]->id = i;
 		philos[i]->times_ate = 0;
+		philos[i]->last_meal = 0;
 		assign_forks(philos[i]);
 		i++;
 	}
@@ -84,7 +85,7 @@ t_table	*init_table(int ac, char **av, int i)
 
 	table = malloc(sizeof(t_table) * 1);
 	if (!table)
-		return (error_null(STR_ERR_MALLOC, NULL, 0));
+		return (error_null(STR_ERR_MALLOC, NULL, 0)); 
 	table->nb_philos = my_atoi(av[i++]);
 	table->time_to_die = my_atoi(av[i++]);
 	table->time_to_eat = my_atoi(av[i++]);
