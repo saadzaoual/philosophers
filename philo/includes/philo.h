@@ -6,7 +6,7 @@
 /*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/29 11:46:01 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/06/02 14:53:14 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/06 11:41:10 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ typedef struct s_table
 	time_t			time_to_eat;
 	time_t			time_to_sleep;
 	int				must_eat_count;
-	int			sim_stop;
+	int				sim_stop;
 	pthread_mutex_t	sim_stop_lock;
 	pthread_mutex_t	write_lock;
 	pthread_mutex_t	*fork_locks;
@@ -96,7 +96,7 @@ typedef enum e_status
 ******************************************************************************/
 
 //	parsing.c
-int			is_valid_input(int ac, char **av);
+int				is_valid_input(int ac, char **av);
 int				my_atoi(char *str);
 
 //	init.c
@@ -118,7 +118,7 @@ int				msg(char *str, char *detail, int exit_no);
 
 //	sleepolice.c
 void			*sleepolice(void *data);
-int			has_simulation_stopped(t_table *table);
+int				has_simulation_stopped(t_table *table);
 
 //	exit.c
 int				error_failure(char *str, char *details, t_table *table);

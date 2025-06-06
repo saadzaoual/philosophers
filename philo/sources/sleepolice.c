@@ -6,7 +6,7 @@
 /*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/04 12:00:18 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/06/04 15:29:12 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/06 11:43:50 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 static void	set_sim_stop_flag(t_table *table, int state)
 {
 	pthread_mutex_lock(&table->sim_stop_lock);
-		table->sim_stop = state;
+	table->sim_stop = state;
 	pthread_mutex_unlock(&table->sim_stop_lock);
 }
 
@@ -49,7 +49,7 @@ static int	kill_philo(t_philo *philo)
 static int	end_condition_reached(t_table *table)
 {
 	unsigned int	i;
-	int			all_ate_enough;
+	int				all_ate_enough;
 
 	all_ate_enough = 1;
 	i = 0;

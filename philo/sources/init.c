@@ -6,7 +6,7 @@
 /*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/03 11:35:04 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/06/04 15:36:58 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/06 11:33:38 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ t_table	*init_table(int ac, char **av, int i)
 
 	table = malloc(sizeof(t_table) * 1);
 	if (!table)
-		return (error_null(STR_ERR_MALLOC, NULL, 0)); 
+		return (error_null(STR_ERR_MALLOC, NULL, 0));
 	table->nb_philos = my_atoi(av[i++]);
 	table->time_to_die = my_atoi(av[i++]);
 	table->time_to_eat = my_atoi(av[i++]);

@@ -6,7 +6,7 @@
 /*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 11:55:16 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/06/04 12:03:11 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/06 11:36:05 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,24 +25,23 @@ static int	contains_only_digits(char *str)
 	}
 	return (1);
 }
-int my_atoi(char *str)
-{
-	unsigned long long nb = 0;
-	int i = 0;
 
+int	my_atoi(char *str)
+{
+	unsigned long long	nb;
+	int					i;
+
+	nb = 0;
+	i = 0;
 	if (!str[0])
 		return (-1);
-
 	while (str[i])
 	{
 		if (str[i] < '0' || str[i] > '9')
 			return (-1);
-
 		nb = nb * 10 + (str[i] - '0');
-
 		if (nb > (unsigned long long)INT_MAX)
 			return (-1);
-
 		i++;
 	}
 	return ((int)nb);

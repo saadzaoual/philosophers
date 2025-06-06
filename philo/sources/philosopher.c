@@ -6,7 +6,7 @@
 /*   By: szaoual <szaoual@students.1337.ma>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/02 15:12:00 by mcombeau          #+#    #+#             */
-/*   Updated: 2025/06/04 13:23:29 by szaoual          ###   ########.fr       */
+/*   Updated: 2025/06/06 11:42:26 by szaoual          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,30 @@ static void	*lone_philo_routine(t_philo *philo)
 	return (NULL);
 }
 
+static void	philo_routine_loop(t_philo *philo)
+{
+	long	time_sim;
+	long	get_p_time;
+
+	while (!has_simulation_stopped(philo->table))
+	{
+		if (philo->table->must_eat_count != -1
+			&& philo->table->must_eat_count <= (int)philo->times_ate)
+			break ;
+		eat_sleep_routine(philo);
+		write_status(philo, 0, THINKING);
+		if (philo->table->nb_philos % 2)
+		{
+			pthread_mutex_lock(&philo->table->sim_stop_lock);
+			time_sim = get_time_in_ms() - philo->last_meal;
+			get_p_time = philo->table->time_to_die - time_sim;
+			pthread_mutex_unlock(&philo->table->sim_stop_lock);
+			if (get_p_time > 0)
+				philo_sleep(philo->table, (long)(get_p_time * 0.9));
+		}
+	}
+}
+
 void	*philosopher(void *data)
 {
 	t_philo	*philo;
@@ -62,23 +86,6 @@ void	*philosopher(void *data)
 		return (lone_philo_routine(philo));
 	else if (philo->id % 2)
 		philo_sleep(philo->table, 1);
-	while (has_simulation_stopped(philo->table) == 0)
-	{
-		if(philo->table->must_eat_count != -1 && philo->table->must_eat_count  <= (int)philo->times_ate)
-			break;
-		eat_sleep_routine(philo);
-		write_status(philo, 0, THINKING);
-		if(philo->table->nb_philos % 2)
-		{
-			pthread_mutex_lock(&philo->table->sim_stop_lock);
-			long time_sim = get_time_in_ms() - philo->last_meal;
-			long get_p_time = philo->table->time_to_die - time_sim;
-			pthread_mutex_unlock(&philo->table->sim_stop_lock);
-		
-			if(get_p_time > 0)
-				philo_sleep(philo->table, (long)(get_p_time * 0.9));
-	
-		}
-	}
+	philo_routine_loop(philo);
 	return (NULL);
 }
